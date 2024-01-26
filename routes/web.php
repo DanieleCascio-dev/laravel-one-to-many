@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::middleware(['auth','verified'])
 ->prefix('admin')
 ->group(function() {
     route::resource('projects', ProjectController::class)->parameters(['projects'=>'project:slug']);
+    route::resource('types',TypeController::class)->parameters(['types'=>'type:slug']);
     route::get('/',[DashboardController::class,'index'])->name('dashboard');
 });
 
