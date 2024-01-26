@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container mt-3 p-2">
-    <a href="{{ url()->previous() }}">Go back</a>
+    @include('partials.go_back')
     <h2>Project details:</h2>
     <h3><strong>Title: </strong>{{ $project->title }}</h3>
     <p><strong>Description: </strong>{{ $project->description }}</p>
