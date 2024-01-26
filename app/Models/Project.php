@@ -20,4 +20,8 @@ class Project extends Model
         $this->attributes["title"] = $value;
         $this->attributes["slug"]=Str::slug($value);
     }
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
