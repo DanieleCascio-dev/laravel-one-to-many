@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="conatiner">
-    <a href="{{ url()->previous() }}">Go back</a>
+    @include('partials.go_back')
     <h2>Welcome to the Edit section!</h2>
 
     @if ($errors->any())

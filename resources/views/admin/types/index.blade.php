@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container mt-5">
-    <h2 class="mb-2">{{ Auth::user()->name }} Here you can find all the Types</h2>
+    <h2 class="mb-2">{{ Auth::user()->name }} here you can find all the Types</h2>
     <table class="table table-dark table-striped">
       <thead>
         <tr>
@@ -18,7 +18,9 @@
         <tr>
           <th scope="row">{{ $type->id }}</th>
           <td>{{ $type->name}}</td>
-          <td></td>
+          <td>
+            <a class="btn btn-success" href="{{ route('admin.types.show',['type'=>$type->slug]) }}">Details</a>
+          </td>
          
         </tr>
 
