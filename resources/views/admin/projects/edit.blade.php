@@ -25,12 +25,25 @@
       @method('PUT')
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input required type="text" class="form-control" id="title" name="title" value="{{ old('title') ?? $project->title  }}">
+        <input  type="text" class="form-control" id="title" name="title" value="{{ old('title') ?? $project->title  }}">
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
         <textarea class="form-control" id="description" rows="2" name="description"> {{ old('description') ?? $project->description }} </textarea>
+      </div>
+
+      
+      <div class="mb-3">
+        <label for="type" class="form-label">Project Type</label>
+        <select name="type_id" id="type" class="form-select">
+          <option value="">Select one Type</option>
+          @foreach ($types as $type)
+
+          <option @selected(old($project->type?->name) ?? $project->type?->name == $type->name) value="{{ $type->id }}">{{ $type->name }}</option>
+              
+          @endforeach
+        </select>
       </div>
 
         <button class="btn btn-success">Save</button>
