@@ -69,6 +69,12 @@
                                     <i class="fa-solid fa-sheet-plastic"></i></i> Projects
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.types.index') }}">
+                                    <i class="fa-solid fa-sheet-plastic"></i></i> Types
+                                </a>
+                            </li>
                         </ul>
 
 
