@@ -18,7 +18,7 @@ class TypeTableSeeder extends Seeder
        foreach ($types as $type) {
             $new_type = new Type();
             $new_type->name = $type;
-            dd($new_type);
+        
             $new_type->save();
        }
     }

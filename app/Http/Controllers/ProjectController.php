@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -15,8 +16,9 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $types = Type::all();
 
-        return view('admin.projects.index',compact('projects'));
+        return view('admin.projects.index',compact('projects','types'));
     }
 
     /**
@@ -46,8 +48,9 @@ class ProjectController extends Controller
     public function show($slug)
     {
         $project = Project::where('slug',$slug)->first();
+        $types = Type::all();
         
-        return view('admin.projects.show',compact('project'));
+        return view('admin.projects.show',compact('project','types'));
     }
 
     /**

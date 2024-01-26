@@ -8,6 +8,8 @@
     <p><strong>Description: </strong>{{ $project->description }}</p>
     <p><strong>Slug: </strong>{{ $project->slug }}</p>
     <p><strong>Creation date: </strong>{{ $project->created_at }}</p>
+    <p><strong>Project Type: </strong>{{ $project->type?->name }}</p>
+    
 
     <div class="d-flex gap-2">
 
