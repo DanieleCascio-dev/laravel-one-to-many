@@ -32,6 +32,18 @@
         <textarea class="form-control" id="description" rows="2" name="description"> {{ old('description')}} </textarea>
       </div>
 
+      <div class="mb-3">
+        <label for="type" class="form-label">Project Type</label>
+        <select name="type_id" id="type" class="form-select">
+          <option value="">Select one Type</option>
+          @foreach ($types as $type)
+
+          <option value="{{ $type->id }}">{{ $type->name }}</option>
+              
+          @endforeach
+        </select>
+      </div>
+
         <button class="btn btn-success">Save</button>
     </form>
   </div>
