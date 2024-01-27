@@ -20,6 +20,7 @@
           <td>{{ $type->name}}</td>
           <td>
             <a class="btn btn-success" href="{{ route('admin.types.show',['type'=>$type->slug]) }}">Details</a>
+            <a class="btn btn-warning" href="{{ route('admin.types.edit',['type'=>$type->slug]) }}">Edit</a>
           </td>
          
         </tr>
